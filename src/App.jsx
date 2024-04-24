@@ -3,7 +3,7 @@ function App() {
     <>
       {" "}
       <h1 className="text-3xl text-red-500 font-bold underline">
-        tu cherches quoi ici ?
+        Bravo !!!
       </h1>
     </>
   );
