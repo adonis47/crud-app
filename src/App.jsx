@@ -1,13 +1,11 @@
-import Header from "./component/Header";
-import Footer from "./components/Footer"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
-    <Header/>
-      {" "}
-      <h1 className=" font-bold underline">
-        <Footer/>
-      </h1>
+      <Header />
+
+      <Footer />
     </>
   );
 }
