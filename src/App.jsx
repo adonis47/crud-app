@@ -1,7 +1,8 @@
+import Header from "./component/Header";
 function App() {
   return (
     <>
-      {" "}
+    <Header/>
       <h1 className="text-3xl text-red-500 font-bold underline">
         Bravo !!!
       </h1>
