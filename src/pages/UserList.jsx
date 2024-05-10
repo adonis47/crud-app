@@ -1,33 +1,17 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import {Link} from "react-router-dom"
-import { useState } from 'react'
-
+import { useEffect,useState } from 'react'
+import axios from "axios"
 const UserList = () => {
-    const [userlist, setUserlist]= useState ([{
-        "id": "1",
-        "name": "Juliet Oma",
-        "email": "julie@yahoo.com",
-        "number": "08100000000"
-      },
-      {
-        "id": "2",
-        "name": "James Williams",
-        "email": "jameswilly@gmail.com",
-        "number": "08111111111"
-      },
-      {
-        "id": "3",
-        "name": "Ahmed Ali",
-        "email": "ahmedali012@gmail.com",
-        "number": "09022222222"
-      },
-      {
-        "id": "4",
-        "name": "Grace Funsho",
-        "email": "gracefunsho@gmail.com",
-        "number": "09033333333"
-      }])
+    const [userlist, setUserlist]= useState ([])
+      useEffect(() => {
+        axios
+          .get("http://localhost:3000/users")
+          .then((res) =>setUserlist (res.data))
+          .catch((err) => console.log(err));
+      }, []);
+      
   return (
     <div><Header />
     <div className="flex-row text-center">
