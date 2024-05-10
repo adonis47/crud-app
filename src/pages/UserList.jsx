@@ -1,5 +1,5 @@
-import Header from './Header'
-import Footer from './Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import {Link} from "react-router-dom"
 import { useState } from 'react'
 
@@ -32,8 +32,8 @@ const UserList = () => {
     <div><Header />
     <div className="flex-row text-center">
       <button className="border-4 bg-blue-500 rounded-lg text-white mt-7 border-blue-500">
-      <Link className="text-white" to="components/SignUp">
-              sign up
+      <Link className="text-white" to="/components/SignUp">
+              Add User
             </Link>
           </button>
     {userlist.map((user)=>(
@@ -41,6 +41,7 @@ const UserList = () => {
     <div>{user.name}</div>
     <div>{user.email}</div>
     <div>{user.number}</div>
+    <div>{user.id}</div>
     <hr className="border border-solid divide-white  " />
       </div>
     ))}
