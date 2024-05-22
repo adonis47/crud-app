@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 const UserList = () => {
   const [userlist, setUserlist] = useState([]);
+ 
   useEffect(() => {
     axios
       .get("http://localhost:3000/users")
@@ -20,7 +21,7 @@ function handledelete (userid) {
       <Header />
       <div className="flex-row text-center">
         <button className="border-4 bg-blue-500 rounded-lg text-white mt-7 border-blue-500">
-          <Link className="text-white" to="/components/SignUp">
+          <Link className="text-white" to="/components/SignUp" >
             Add User
           </Link>
         </button>
@@ -34,7 +35,7 @@ function handledelete (userid) {
               </div>
             <div className="align-middle">
             <button className="flex-col rounded-lg my-auto bg-blue-600 px-2 hover:text-white">
-            <Link className="hover:text-white" to="/components/Updateuser">
+            <Link className="hover:text-white" to="/components/Updateuser" state = {{ from: user}}>
                 Edit
             </Link>
                 

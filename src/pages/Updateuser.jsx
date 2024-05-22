@@ -1,17 +1,33 @@
-import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import axios  from 'axios'
 const Updateuser = () => {
-    const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [number, setNumber] = useState("")
+    const location = useLocation()
+const {from} = location.state
+
+    const [name, setName] = useState(from.name)
+  const [email, setEmail] = useState(from.email)
+  const [number, setNumber] = useState(from.number)
+function HandleSubmit(e){
+    e.preventDefault()
+    const data = {
+        name:name,
+        email:email,
+        number:number
+      }
+    axios.post(`http://localhost:3000/users`,  data )
+    .then(res => {
+     return window.location.href="/components/UserList"})
+}
+ 
+ 
   return (
-    <div className="  text-center w-1/2 mx-auto bg-green-700 rounded-2xl shadow-2xl h-1/2 my-52 pt-10">
+    <div className="  text-center w-1/2 mx-auto bg-blue-400 rounded-2xl shadow-2xl h-1/2 my-52 pt-10">
       <h1 className="text-white text-3xl font-bold my-2 rounded-2xl bg-blue-600 p-3 w-3/4 mx-auto">
         Fill the form below to change user informations
       </h1>
       <div className="border-2 rounded-full bg-blue-600 w-40 mx-auto my-3"></div>
-      <form>
+      <form onSubmit={HandleSubmit}>
         <div className=" text-white py-10 flex ml-20">
           <div>Full Name :</div>
           <input
@@ -38,11 +54,11 @@ const Updateuser = () => {
         </div>
         <div className="flex items-center">
           <button className=" rounded-3xl bg-blue-600 text-white w-60 my-10 py-4 font-extrabold hover:bg-white hover:text-blue-600" type="submit">
-        <Link className="text-white hover:text-blue-600" to="/components/UserList">
+        <Link className="text-white hover:text-blue-600" to="/components/UserList" >
         User List
             </Link>
         </button>
-        <button className="rounded-3xl h-14 bg-blue-600 text-white w-60 ml-24 py-4 font-extrabold  hover:bg-white hover:text-blue-600">
+        <button className="rounded-3xl h-14 bg-blue-600 text-white w-60 ml-24 py-4 font-extrabold  hover:bg-white hover:text-blue-600" type='submit'>
           Update User
         </button></div>
       </form>
