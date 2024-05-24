@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Juliet Oma",
+      "name": "Juliet Oma update",
       "email": "julie@yahoo.com",
-      "number": "08100000000"
+      "number": "08100000000",
+      "id": "1"
     },
     {
       "id": "2",
@@ -13,34 +13,22 @@
       "number": "08111111111"
     },
     {
-      "id": "3",
-      "name": "Ahmed Ali",
-      "email": "ahmedali012@gmail.com",
-      "number": "09022222222"
+      "id": "134f",
+      "name": "DILANE SIGHE",
+      "email": "dilane81@gmail.com",
+      "number": "695312585"
     },
     {
-      "id": "4",
-      "name": "Grace Funsho",
-      "email": "gracefunsho@gmail.com",
-      "number": "09033333333"
+      "id": "1f23",
+      "name": "",
+      "email": "",
+      "number": ""
     },
     {
-      "id": "3eb7",
-      "name": "dilane",
-      "email": "dilane@12",
-      "number": "123456"
-    },
-    {
-      "id": "4b9a",
-      "name": "Juliet Oma",
-      "email": "julie@yahoo.com",
-      "number": "08100000000"
-    },
-    {
-      "id": "c954",
-      "name": "Juliet Oma and Dilane",
-      "email": "julie@yahoo.com",
-      "number": "08100000000"
+      "id": "e5b7",
+      "name": "",
+      "email": "",
+      "number": ""
     }
   ]
 }

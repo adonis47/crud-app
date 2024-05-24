@@ -15,7 +15,7 @@ function HandleSubmit(e){
         email:email,
         number:number
       }
-    axios.post(`http://localhost:3000/users`,  data )
+    axios.put(`http://localhost:3000/users/` +from.id , data   )
     .then(res => {
      return window.location.href="/components/UserList"})
 }
@@ -24,7 +24,7 @@ function HandleSubmit(e){
   return (
     <div className="  text-center w-1/2 mx-auto bg-blue-400 rounded-2xl shadow-2xl h-1/2 my-52 pt-10">
       <h1 className="text-white text-3xl font-bold my-2 rounded-2xl bg-blue-600 p-3 w-3/4 mx-auto">
-        Fill the form below to change user informations
+    Update List
       </h1>
       <div className="border-2 rounded-full bg-blue-600 w-40 mx-auto my-3"></div>
       <form onSubmit={HandleSubmit}>
@@ -53,12 +53,12 @@ function HandleSubmit(e){
             value={number} />
         </div>
         <div className="flex items-center">
-          <button className=" rounded-3xl bg-blue-600 text-white w-60 my-10 py-4 font-extrabold hover:bg-white hover:text-blue-600" type="submit">
-        <Link className="text-white hover:text-blue-600" to="/components/UserList" >
+          <button className=" rounded-3xl bg-green-700 text-white w-60 my-10 py-4 font-extrabold hover:bg-white hover:text-blue-600" type="submit">
+        <Link  to="/components/UserList" >
         User List
             </Link>
         </button>
-        <button className="rounded-3xl h-14 bg-blue-600 text-white w-60 ml-24 py-4 font-extrabold  hover:bg-white hover:text-blue-600" type='submit'>
+        <button className="rounded-3xl h-14 bg-violet-700 text-white w-60 ml-24 py-4 font-extrabold  hover:bg-white hover:text-blue-600" type='submit'>
           Update User
         </button></div>
       </form>

@@ -14,14 +14,19 @@ const UserList = () => {
   }, []);
 function handledelete (userid) {
   axios.delete ("http://localhost:3000/users/" + userid )
+  .then(res => {
+    axios
+      .get("http://localhost:3000/users")
+      .then((res) => setUserlist(res.data))
+      .catch((err) => console.log(err));})
 }
 
   return (
     <div>
       <Header />
       <div className="flex-row text-center">
-        <button className="border-4 bg-blue-500 rounded-lg text-white mt-7 border-blue-500">
-          <Link className="text-white" to="/components/SignUp" >
+        <button className="border-4 bg-green-500 rounded-lg text-white mt-7 border-green-500">
+          <Link className="text-whiteS" to="/components/SignUp" >
             Add User
           </Link>
         </button>
@@ -34,7 +39,7 @@ function handledelete (userid) {
                 <div>{user.number}</div>
               </div>
             <div className="align-middle">
-            <button className="flex-col rounded-lg my-auto bg-blue-600 px-2 hover:text-white">
+            <button className="flex-col rounded-lg my-auto bg-violet-600 px-2 hover:text-white">
             <Link className="hover:text-white" to="/components/Updateuser" state = {{ from: user}}>
                 Edit
             </Link>
