@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 const UserList = () => {
   const [userlist, setUserlist] = useState([]);
- 
+ const Totaluserlist = userlist.length
   useEffect(() => {
     axios
       .get("http://localhost:3000/users")
@@ -39,13 +39,13 @@ function handledelete (userid) {
                 <div>{user.number}</div>
               </div>
             <div className="align-middle">
-            <button className="flex-col rounded-lg my-auto bg-violet-600 px-2 hover:text-white">
+            <button className="flex-col rounded my-auto bg-violet-600 px-2 text-white">
             <Link className="hover:text-white" to="/components/Updateuser" state = {{ from: user}}>
                 Edit
             </Link>
                 
               </button>
-              <button className="flex-col rounded-lg my-auto bg-red-400 ml-6 px-2 hover:text-white" onClick={()=> handledelete (user.id)}>
+              <button className="flex-row rounded my-auto bg-red-500 ml-6 px-2 text-white" onClick={()=> handledelete (user.id)}>
                 Delete
               </button>
             </div>
@@ -55,7 +55,7 @@ function handledelete (userid) {
         ))}
       </div>
 
-      <Footer />
+      <Footer Totaluserlist= {Totaluserlist}/>
     </div>
   );
 };
